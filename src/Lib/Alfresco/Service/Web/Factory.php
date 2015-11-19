@@ -29,7 +29,7 @@ namespace Lib\Alfresco\Service\WebService;
 
 require_once 'AlfrescoWebService.php';
 
-class WebServiceFactory
+class Factory
 {
     public static function getAuthenticationService($path)
     {
