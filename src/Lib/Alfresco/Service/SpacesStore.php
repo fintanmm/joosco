@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (C) 2005 Alfresco, Inc.
  *
@@ -16,39 +17,40 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
- * As a special exception to the terms and conditions of version 2.0 of 
- * the GPL, you may redistribute this Program in connection with Free/Libre 
- * and Open Source Software ("FLOSS") applications as described in Alfresco's 
- * FLOSS exception.  You should have recieved a copy of the text describing 
- * the FLOSS exception, and it is also available here: 
+ * As a special exception to the terms and conditions of version 2.0 of
+ * the GPL, you may redistribute this Program in connection with Free/Libre
+ * and Open Source Software ("FLOSS") applications as described in Alfresco's
+ * FLOSS exception.  You should have recieved a copy of the text describing
+ * the FLOSS exception, and it is also available here:
  * http://www.alfresco.com/legal/licensing"
  */
- 
+
+namespace Lib\Alfresco\Service;
+
 require_once 'Store.php';
 require_once 'Node.php';
 
 class SpacesStore extends Store
 {
-	private $_companyHome;
+    private $_companyHome;
 
-	public function __construct($session)
-	{
-		parent::__construct($session, "SpacesStore");
-	}
+    public function __construct($session)
+    {
+        parent::__construct($session, 'SpacesStore');
+    }
 
-	public function __toString()
-	{
-		return $this->scheme . "://" . $this->address;
-	}
-	
-	public function getCompanyHome()
-	{
-		if ($this->_companyHome == null)
-		{
-			$nodes = $this->_session->query($this, 'PATH:"app:company_home"');
-	        $this->_companyHome = $nodes[0];
-		}
-		return $this->_companyHome;
-	}
+    public function __toString()
+    {
+        return $this->scheme.'://'.$this->address;
+    }
+
+    public function getCompanyHome()
+    {
+        if ($this->_companyHome == null) {
+            $nodes = $this->_session->query($this, 'PATH:"app:company_home"');
+            $this->_companyHome = $nodes[0];
+        }
+
+        return $this->_companyHome;
+    }
 }
-?>
