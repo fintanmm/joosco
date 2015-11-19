@@ -1,0 +1,37 @@
+{
+    "name": "fintanmm/joosco",
+    "type": "library",
+    "description": "JOOSCO is a front end for Alfresco using the Joomla framework",
+    "homepage": "https://github.com/fintanmm/joosco",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "See contributors",
+            "homepage": "https://github.com/fintanmm/joosco/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/fintanmm/joosco/issues"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "pdepend/pdepend": "~1.0",
+        "phploc/phploc": "~2.0",
+        "phpmd/phpmd": "~1.0",
+        "phpunit/phpunit": "~3.0",
+        "scrutinizer/ocular": "~1.0",
+        "sebastian/phpcpd": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joosco\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Joosco\\Test\\": "test/"
+        }
+    }
+}
