@@ -1,34 +1,28 @@
 <?php
+
 /**
- * @package    D-Bog
- * @subpackage Joosco
  * @link http://www.d-bog.com
+ *
  * @license    GNU/GPL
  */
+namespace Joosco\Controller;
 
 // no direct access
 
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.controller');
 
 /**
- * Joosco Component Controller
- *
- * @package    D-Bog
- * @subpackage Components
+ * Joosco Component Controller.
  */
-class JooscoController extends JController
+class Controller extends JController
 {
     /**
-     * Method to display the view
-     *
-     * @access    public
+     * Method to display the view.
      */
-    function display()
+    public function display()
     {
         parent::display();
     }
-
 }
-?>
