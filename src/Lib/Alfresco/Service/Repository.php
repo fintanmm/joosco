@@ -32,7 +32,7 @@ require_once 'BaseObject.php';
 
 if (isset($_SESSION) == false) {
     // Start the session
-   session_start();
+    session_start();
 }
 
 class Repository extends BaseObject

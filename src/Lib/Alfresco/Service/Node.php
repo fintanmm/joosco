@@ -218,7 +218,8 @@ class Node extends BaseObject
         $result = $client->createVersion(
             array('items' => array('nodes' => $this->__toArray()),
                   'comments' => array('name' => 'description', 'value' => $description),
-                  'versionChildren' => false, ));
+                  'versionChildren' => false, )
+        );
 
         // Clear the properties and aspects
         $this->_properties = null;
@@ -543,11 +544,12 @@ class Node extends BaseObject
             }
 
             $this->addStatement($statements, 'create',
-                                array('id' => $this->_id) +
-                                $parentArray +
-                                array(
-                                    'type' => $this->_type,
-                                    'property' => $this->getPropertyArray($this->_properties), ));
+                array('id' => $this->_id) +
+                $parentArray +
+                array(
+                    'type' => $this->_type,
+                    'property' => $this->getPropertyArray($this->_properties), )
+            );
         } else {
             // Add the update statement for the modified properties
             $modifiedProperties = $this->getModifiedProperties();

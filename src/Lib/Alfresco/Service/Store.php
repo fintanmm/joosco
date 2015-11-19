@@ -72,7 +72,8 @@ class Store extends BaseObject
             $result = $this->_session->repositoryService->get(
                 array(
                     'where' => array(
-                        'store' => $this->__toArray(), ), ));
+                    'store' => $this->__toArray(), ), )
+            );
 
             $this->_rootNode = Node::createFromWebServiceData($this->_session, $result->getReturn);
         }

@@ -205,21 +205,23 @@ class ContentData extends BaseObject
                     $statements,
                     'update',
                     array('property' => array(
-                                'name' => $this->property,
-                                'isMultiValue' => false,
-                                'value' => $contentData, )) + $where);
+                          'name' => $this->property,
+                          'isMultiValue' => false,
+                          'value' => $contentData, )) + $where
+                );
             } else {
                 // Add the writeContent statement
                 $this->addStatement(
-                        $statements,
-                        'writeContent',
-                        array(
-                            'property' => $this->_property,
-                            'content' => $this->_newContent,
-                            'format' => array(
-                                'mimetype' => $this->_mimetype,
-                                'encoding' => $this->_encoding, ), ) +
-                            $where);
+                    $statements,
+                    'writeContent',
+                    array(
+                        'property' => $this->_property,
+                        'content' => $this->_newContent,
+                        'format' => array(
+                        'mimetype' => $this->_mimetype,
+                        'encoding' => $this->_encoding, ), ) +
+                    $where
+                );
             }
         }
     }
@@ -241,9 +243,9 @@ class ContentData extends BaseObject
         if ($this->_isPopulated == false && $this->_node != null && $this->_property != null && $this->_node->isNewNode == false) {
             $result = $this->_node->session->contentService->read(array(
                                                                 'items' => array(
-                                                                    'nodes' => array(
-                                                                        'store' => $this->_node->store->__toArray(),
-                                                                        'uuid' => $this->_node->id, ), ),
+                                                                'nodes' => array(
+                                                                'store' => $this->_node->store->__toArray(),
+                                                                'uuid' => $this->_node->id, ), ),
                                                                 'property' => $this->_property, ));
             if (isset($result->content) == true) {
                 if (isset($result->content->length) == true) {

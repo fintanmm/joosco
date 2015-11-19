@@ -28,13 +28,13 @@
 namespace Lib\Alfresco\Service;
 
 /**
-  * Version history class.
-  *
-  * @author Roy Wetherall
-  */
- class VersionHistory extends BaseObject
- {
-     /** Node to which this version history relates */
+ * Version history class.
+ *
+ * @author Roy Wetherall
+ */
+class VersionHistory extends BaseObject
+{
+    /** Node to which this version history relates */
     private $_node;
 
     /** Array of versions */
@@ -43,7 +43,7 @@ namespace Lib\Alfresco\Service;
     /**
      * Constructor.
      *
-     * @param	$node	the node that this version history apples to
+     * @param   $node the node that this version history apples to
      */
     public function __construct($node)
     {
@@ -79,4 +79,4 @@ namespace Lib\Alfresco\Service;
 
         // TODO populate the version history from the result of the web service call
     }
- }
+}
