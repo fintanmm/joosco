@@ -13,69 +13,69 @@
 
 	<files folder="site">
 		<filename>index.html</filename>
-		<filename>joosco.php</filename>
-		<filename>controller.php</filename>
-		<filename>views/index.html</filename>
-		<filename>views/joosco/index.html</filename>
-		<filename>views/joosco/view.html.php</filename>
-		<filename>views/joosco/tmpl/index.html</filename>
-		<filename>views/joosco/tmpl/default.php</filename>
+		<filename>Joosco.php</filename>
+		<filename>Controller.php</filename>
+		<filename>Views/index.html</filename>
+		<filename>Views/Joosco/index.html</filename>
+		<filename>Views/Joosco/view.html.php</filename>
+		<filename>Views/Joosco/tmpl/index.html</filename>
+		<filename>Views/Joosco/tmpl/default.php</filename>
 	</files>
 
 	<!-- The entire Alfresco PHP Library is included with the component -->
 	<files>
-		<filename>alfresco-php-library/Alfresco/Service/Association.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/BaseObject.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/ChildAssociation.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/ContentData.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Functions.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/NamespaceMap.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Node.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Repository.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Session.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/SpacesStore.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Store.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/VersionHistory.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Version.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/index.html</filename>
+		<filename>Lib/Alfresco/Service/Association.php</filename>
+		<filename>Lib/Alfresco/Service/BaseObject.php</filename>
+		<filename>Lib/Alfresco/Service/ChildAssociation.php</filename>
+		<filename>Lib/Alfresco/Service/ContentData.php</filename>
+		<filename>Lib/Alfresco/Service/Functions.php</filename>
+		<filename>Lib/Alfresco/Service/NamespaceMap.php</filename>
+		<filename>Lib/Alfresco/Service/Node.php</filename>
+		<filename>Lib/Alfresco/Service/Repository.php</filename>
+		<filename>Lib/Alfresco/Service/Session.php</filename>
+		<filename>Lib/Alfresco/Service/SpacesStore.php</filename>
+		<filename>Lib/Alfresco/Service/Store.php</filename>
+		<filename>Lib/Alfresco/Service/VersionHistory.php</filename>
+		<filename>Lib/Alfresco/Service/Version.php</filename>
+		<filename>Lib/Alfresco/Service/index.html</filename>
 
-		<filename>alfresco-php-library/Alfresco/Service/Logger/LoggerConfig.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Logger/Logger.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/Logger/index.html</filename>
+		<filename>Lib/Alfresco/Service/Logger/LoggerConfig.php</filename>
+		<filename>Lib/Alfresco/Service/Logger/Logger.php</filename>
+		<filename>Lib/Alfresco/Service/Logger/index.html</filename>
 
-		<filename>alfresco-php-library/Alfresco/Service/WebService/AlfrescoWebService.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/WebService/WebServiceFactory.php</filename>
-		<filename>alfresco-php-library/Alfresco/Service/WebService/index.html</filename>
+		<filename>Lib/Alfresco/Service/WebService/AlfrescoWebService.php</filename>
+		<filename>Lib/Alfresco/Service/WebService/WebServiceFactory.php</filename>
+		<filename>Lib/Alfresco/Service/WebService/index.html</filename>
 
-		<filename>alfresco-php-library/Common/Images/add_user.gif</filename>
-		<filename>alfresco-php-library/Common/Images/AlfrescoFadedBG.png</filename>
-		<filename>alfresco-php-library/Common/Images/AlfrescoLogo200.png</filename>
-		<filename>alfresco-php-library/Common/Images/AlfrescoLogo32.png</filename>
-		<filename>alfresco-php-library/Common/Images/blue_01.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_02.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_03.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_04.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_06.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_07.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_08.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_09.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_white_07.gif</filename>
-		<filename>alfresco-php-library/Common/Images/blue_white_09.gif</filename>
-		<filename>alfresco-php-library/Common/Images/logout.gif</filename>
-		<filename>alfresco-php-library/Common/Images/person.gif</filename>
-		<filename>alfresco-php-library/Common/Images/post.gif</filename>
-		<filename>alfresco-php-library/Common/Images/space_small.gif</filename>
-		<filename>alfresco-php-library/Common/Images/titlebar_begin.gif</filename>
-		<filename>alfresco-php-library/Common/Images/titlebar_bg.gif</filename>
-		<filename>alfresco-php-library/Common/Images/titlebar_end.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_01.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_02.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_03.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_04.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_06.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_07.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_08.gif</filename>
-		<filename>alfresco-php-library/Common/Images/white_09.gif</filename>
+		<filename>assets/Images/add_user.gif</filename>
+		<filename>assets/Images/AlfrescoFadedBG.png</filename>
+		<filename>assets/Images/AlfrescoLogo200.png</filename>
+		<filename>assets/Images/AlfrescoLogo32.png</filename>
+		<filename>assets/Images/blue_01.gif</filename>
+		<filename>assets/Images/blue_02.gif</filename>
+		<filename>assets/Images/blue_03.gif</filename>
+		<filename>assets/Images/blue_04.gif</filename>
+		<filename>assets/Images/blue_06.gif</filename>
+		<filename>assets/Images/blue_07.gif</filename>
+		<filename>assets/Images/blue_08.gif</filename>
+		<filename>assets/Images/blue_09.gif</filename>
+		<filename>assets/Images/blue_white_07.gif</filename>
+		<filename>assets/Images/blue_white_09.gif</filename>
+		<filename>assets/Images/logout.gif</filename>
+		<filename>assets/Images/person.gif</filename>
+		<filename>assets/Images/post.gif</filename>
+		<filename>assets/Images/space_small.gif</filename>
+		<filename>assets/Images/titlebar_begin.gif</filename>
+		<filename>assets/Images/titlebar_bg.gif</filename>
+		<filename>assets/Images/titlebar_end.gif</filename>
+		<filename>assets/Images/white_01.gif</filename>
+		<filename>assets/Images/white_02.gif</filename>
+		<filename>assets/Images/white_03.gif</filename>
+		<filename>assets/Images/white_04.gif</filename>
+		<filename>assets/Images/white_06.gif</filename>
+		<filename>assets/Images/white_07.gif</filename>
+		<filename>assets/Images/white_08.gif</filename>
+		<filename>assets/Images/white_09.gif</filename>
 	</files>
 	
 	<administration/>
