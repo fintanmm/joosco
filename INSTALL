@@ -1,0 +1,42 @@
+How to install the Joosco Extension:
+
+First of all, be sure you have a working Joomla!, version 1.5 (RC2 or above). Then follow the instructions:
+
+1. You muse have the PHP SOAP extension installed:
+First, check if it is already installed or not.
+There's an easy way to check that. Just create a file called phpinfo.php and put the following line in it:
+<?php phpinfo(); ?>
+Then connect to your server and search for soap on this page.
+If it is not installed, contact your host.
+
+If you are under Debian/Ubuntu, type the following command in a terminal, as superuser:
+aptitude install php-soap
+On another distribution, use its package manager to install the php-soap package.
+
+2. Install the Joosco Plugin:
+Go to Joomla Administration, then Extensions > Install/Uninstall, and upload the plug_joosco.zip file
+to get Joosco Plugin installed.
+
+If you see "Warning! - Failed to move file", it means that the installer can not upload the file. Check your file permissions on the server and be sure the web server has write access to the files.
+
+3. Configure the plugin:
+Go to Extensions > Plugin Manager, and then click on Authentication - Joosco, click Yes next to Enabled, and edit the Alfresco API URL parameter to match your server URL.
+Replace 'example.com' with your domaine name or IP address where the Alfresco server is hosted.
+If Alfresco and Joomla! are on the same server, don't type 'localhost' but the public IP address of the server name instead.
+
+4. Install the Joosco Component:
+Do the same way as the plugin was installed. Go to Extensions > Install/Uninstall and upload the file com_joosco.zip.
+
+5. Create a menu entry:
+To use the component, you may create an entry in a menu on your site. Use the Joomla! menu editor to do it easily.
+Go to Menus > Menu Manager, click on the Edit Menu Items icon, then New, External Link. For Title, you can type for example "Documents", "documents" as Alias, and "index.php?option=com_joosco" for Link.
+
+THAT'S ALL FOLKS!
+
+The Joosco extension is fully installed and operational.
+You can access your documents with the Documents link in the main menu.
+
+
+To uninstall:
+Go to Extensions > Install/Uninstall, click on Component, check the box next to Joosco and click Uninstall.
+Then repeat the same for Authentication - Joosco, on the Plugins page.
