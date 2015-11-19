@@ -17,9 +17,9 @@
 		<filename>Lib/Alfresco/Repository.php</filename>
 		<filename>Lib/Alfresco/index.html</filename>
 
-		<filename>Lib/Alfresco/WebService/AlfrescoWebService.php</filename>
-		<filename>Lib/Alfresco/WebService/WebServiceFactory.php</filename>
-		<filename>Lib/Alfresco/WebService/index.html</filename>
+		<filename>Lib/Alfresco/Service/Web/Alfresco.php</filename>
+		<filename>Lib/Alfresco/Service/Web/Factory.php</filename>
+		<filename>Lib/Alfresco/Service/Web/index.html</filename>
 	</files>
 	<params>
 		<param name="alf-url" type="text" size="32" default="http://example.com:8080/alfresco/api" label="Alfresco API URL" description="This is the URL of the API on an Alfresco Repository. You can take the default value and replace the 'example.com' part with the address of your Alfresco server. If Alfresco is on the same server, don't write 'localhost'." />

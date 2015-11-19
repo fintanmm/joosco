@@ -43,9 +43,9 @@
 		<filename>Lib/Alfresco/Service/Logger/Logger.php</filename>
 		<filename>Lib/Alfresco/Service/Logger/index.html</filename>
 
-		<filename>Lib/Alfresco/Service/WebService/AlfrescoWebService.php</filename>
-		<filename>Lib/Alfresco/Service/WebService/WebServiceFactory.php</filename>
-		<filename>Lib/Alfresco/Service/WebService/index.html</filename>
+		<filename>Lib/Alfresco/Service/Web/Alfresco.php</filename>
+		<filename>Lib/Alfresco/Service/Web/Factory.php</filename>
+		<filename>Lib/Alfresco/Service/Web/index.html</filename>
 
 		<filename>assets/Images/add_user.gif</filename>
 		<filename>assets/Images/AlfrescoFadedBG.png</filename>
