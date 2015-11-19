@@ -7,16 +7,13 @@
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; either version 2
  * of the License, or (at your option) any later version.
-
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
-
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-
  * As a special exception to the terms and conditions of version 2.0 of
  * the GPL, you may redistribute this Program in connection with Free/Libre
  * and Open Source Software ("FLOSS") applications as described in Alfresco's
@@ -29,63 +26,61 @@ namespace Lib\Alfresco\Service\Logger;
 
 require_once 'LoggerConfig.php';
 
- class Logger
- {
-     private $componentName;
+class Logger
+{
+    private $componentName;
 
-     public function __construct($componentName = null)
-     {
-         $this->componentName = $componentName;
-     }
+    public function __construct($componentName = null)
+    {
+        $this->componentName = $componentName;
+    }
 
-     public function isDebugEnabled()
-     {
-         return $this->isEnabled(DEBUG);
-     }
+    public function isDebugEnabled()
+    {
+        return $this->isEnabled(DEBUG);
+    }
 
-     public function debug($message)
-     {
-         $this->write(DEBUG, $message);
-     }
+    public function debug($message)
+    {
+        $this->write(DEBUG, $message);
+    }
 
-     public function isWarningEnabled()
-     {
-         return $this->isEnabled(WARNING);
-     }
+    public function isWarningEnabled()
+    {
+        return $this->isEnabled(WARNING);
+    }
 
-     public function warning($message)
-     {
-         $this->write(WARNING, $message);
-     }
+    public function warning($message)
+    {
+        $this->write(WARNING, $message);
+    }
 
-     public function isInformationEnabled()
-     {
-         return $this->isEnabled(INFORMATION);
-     }
+    public function isInformationEnabled()
+    {
+        return $this->isEnabled(INFORMATION);
+    }
 
-     public function information($message)
-     {
-         $this->write(INFORMATION, $message);
-     }
+    public function information($message)
+    {
+        $this->write(INFORMATION, $message);
+    }
 
-     private function isEnabled($logLevel)
-     {
-         global $componentLogLevels, $defaultLogLevel;
+    private function isEnabled($logLevel)
+    {
+        global $componentLogLevels, $defaultLogLevel;
+        $logLevels = $defaultLogLevel;
+        if ($this->componentName != null && isset($componentLogLevels[$this->componentName]) == true) {
+            $logLevels = $componentLogLevels[$this->componentName];
+        }
 
-         $logLevels = $defaultLogLevel;
-         if ($this->componentName != null && isset($componentLogLevels[$this->componentName]) == true) {
-             $logLevels = $componentLogLevels[$this->componentName];
-         }
+        return in_array($logLevel, $logLevels);
+    }
 
-         return in_array($logLevel, $logLevels);
-     }
-
-     private function write($logLevel, $message)
-     {
-         global $logFile;
-
-         $handle = fopen($logFile, 'a');
-         fwrite($handle, $logLevel.' '.date('G:i:s d/m/Y').' - '.$message."\r\n");
-         fclose($handle);
-     }
- }
+    private function write($logLevel, $message)
+    {
+        global $logFile;
+        $handle = fopen($logFile, 'a');
+        fwrite($handle, $logLevel.' '.date('G:i:s d/m/Y').' - '.$message."\r\n");
+        fclose($handle);
+    }
+}
