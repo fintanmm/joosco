@@ -443,3 +443,8 @@
 /*.txt
 # added by GitSavvy
 *.sublime*
+
+###Composer###
+
+composer.phar
+vendor/

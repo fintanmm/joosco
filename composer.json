@@ -30,6 +30,10 @@
         }
     },
     "autoload-dev": {
+        "files": [
+            "vendor/joomla/cms/tests/unit/bootstrap.php",
+            "vendor/joomla/cms/tests/unit/suites/libraries/joomla/view/mocks/JModelMock.php"
+        ],        
         "psr-4": {
             "Joosco\\Test\\": "test/"
         }
