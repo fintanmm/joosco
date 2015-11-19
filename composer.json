@@ -3,7 +3,7 @@
     "type": "library",
     "description": "JOOSCO is a front end for Alfresco using the Joomla framework",
     "homepage": "https://github.com/fintanmm/joosco",
-    "license": "MIT",
+    "license": "GPLv2",
     "authors": [
         {
             "name": "See contributors",
