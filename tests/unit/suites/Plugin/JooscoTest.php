@@ -40,6 +40,13 @@ class JooscoTest extends TestCase
         $this->assertTrue($plugin);
     }
 
+    public function testBindToRepository()
+    {
+        $bind = $this->plugin->bindToRepository();
+
+        $this->assertTrue($bind);
+    }
+
     public function setUp()
     {
         parent::setUp();

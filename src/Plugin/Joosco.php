@@ -84,4 +84,9 @@ class Joosco extends JPlugin
             $response->error_message = 'Authentication failed';
         }
     }
+
+    public function bindToRepository()
+    {
+        return true;
+    }
 }
