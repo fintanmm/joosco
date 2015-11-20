@@ -13,6 +13,23 @@
     "support": {
         "issues": "https://github.com/fintanmm/joosco/issues"
     },
+    "repositories": [
+        {
+            "package": {
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/joomla/joomla-cms/archive/staging.zip"
+                },
+                "name": "joomla/cms",
+                "version": "3.4.1"
+            },
+            "type": "package"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/waddedMeat/phing-vagrant.git"
+        }
+    ],    
     "require": {
         "php": ">=5.3.0"
     },
