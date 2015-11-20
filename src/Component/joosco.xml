@@ -15,67 +15,15 @@
 		<filename>index.html</filename>
 		<filename>Joosco.php</filename>
 		<filename>Controller.php</filename>
-		<filename>Views/index.html</filename>
-		<filename>Views/Joosco/index.html</filename>
-		<filename>Views/Joosco/view.html.php</filename>
-		<filename>Views/Joosco/tmpl/index.html</filename>
-		<filename>Views/Joosco/tmpl/default.php</filename>
+		<folder>Views</folder>
+		<folder>vendor</folder>
+		<folder>assets</folder>		
 	</files>
 
 	<!-- The entire Alfresco PHP Library is included with the component -->
 	<files>
-		<filename>Lib/Alfresco/Service/Association.php</filename>
-		<filename>Lib/Alfresco/Service/BaseObject.php</filename>
-		<filename>Lib/Alfresco/Service/ChildAssociation.php</filename>
-		<filename>Lib/Alfresco/Service/ContentData.php</filename>
-		<filename>Lib/Alfresco/Service/Functions.php</filename>
-		<filename>Lib/Alfresco/Service/NamespaceMap.php</filename>
-		<filename>Lib/Alfresco/Service/Node.php</filename>
-		<filename>Lib/Alfresco/Service/Repository.php</filename>
-		<filename>Lib/Alfresco/Service/Session.php</filename>
-		<filename>Lib/Alfresco/Service/SpacesStore.php</filename>
-		<filename>Lib/Alfresco/Service/Store.php</filename>
-		<filename>Lib/Alfresco/Service/VersionHistory.php</filename>
-		<filename>Lib/Alfresco/Service/Version.php</filename>
-		<filename>Lib/Alfresco/Service/index.html</filename>
-
-		<filename>Lib/Alfresco/Service/Logger/LoggerConfig.php</filename>
-		<filename>Lib/Alfresco/Service/Logger/Logger.php</filename>
-		<filename>Lib/Alfresco/Service/Logger/index.html</filename>
-
-		<filename>Lib/Alfresco/Service/Web/Alfresco.php</filename>
-		<filename>Lib/Alfresco/Service/Web/Factory.php</filename>
-		<filename>Lib/Alfresco/Service/Web/index.html</filename>
-
-		<filename>assets/Images/add_user.gif</filename>
-		<filename>assets/Images/AlfrescoFadedBG.png</filename>
-		<filename>assets/Images/AlfrescoLogo200.png</filename>
-		<filename>assets/Images/AlfrescoLogo32.png</filename>
-		<filename>assets/Images/blue_01.gif</filename>
-		<filename>assets/Images/blue_02.gif</filename>
-		<filename>assets/Images/blue_03.gif</filename>
-		<filename>assets/Images/blue_04.gif</filename>
-		<filename>assets/Images/blue_06.gif</filename>
-		<filename>assets/Images/blue_07.gif</filename>
-		<filename>assets/Images/blue_08.gif</filename>
-		<filename>assets/Images/blue_09.gif</filename>
-		<filename>assets/Images/blue_white_07.gif</filename>
-		<filename>assets/Images/blue_white_09.gif</filename>
-		<filename>assets/Images/logout.gif</filename>
-		<filename>assets/Images/person.gif</filename>
-		<filename>assets/Images/post.gif</filename>
-		<filename>assets/Images/space_small.gif</filename>
-		<filename>assets/Images/titlebar_begin.gif</filename>
-		<filename>assets/Images/titlebar_bg.gif</filename>
-		<filename>assets/Images/titlebar_end.gif</filename>
-		<filename>assets/Images/white_01.gif</filename>
-		<filename>assets/Images/white_02.gif</filename>
-		<filename>assets/Images/white_03.gif</filename>
-		<filename>assets/Images/white_04.gif</filename>
-		<filename>assets/Images/white_06.gif</filename>
-		<filename>assets/Images/white_07.gif</filename>
-		<filename>assets/Images/white_08.gif</filename>
-		<filename>assets/Images/white_09.gif</filename>
+		<folder>vendor</folder>
+		<folder>assets</folder>
 	</files>
 	
 	<administration/>
