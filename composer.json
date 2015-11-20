@@ -41,13 +41,16 @@
         "pdepend/pdepend": "~1.0",
         "phploc/phploc": "~2.0",
         "phpmd/phpmd": "~1.0",
-        "phpunit/phpunit": "~3.0",
+        "phpunit/dbunit": "1.4.0",
+        "phpunit/phpunit": "~4.0",
         "scrutinizer/ocular": "~1.0",
         "sebastian/phpcpd": "~2.0"
     },
     "autoload": {
         "psr-4": {
-            "Joosco\\": "src/"
+            "Joosco\\": "src/",
+            "Joosco\\Component\\": "src/Component",
+            "Joosco\\Plugin\\": "src/Plugin"
         }
     },
     "autoload-dev": {
@@ -56,7 +59,7 @@
             "vendor/joomla/cms/tests/unit/suites/libraries/joomla/view/mocks/JModelMock.php"
         ],        
         "psr-4": {
-            "Joosco\\Test\\": "test/"
+            "Joosco\\UnitTests\\": "tests/unit/"
         }
     }
 }
