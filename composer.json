@@ -33,7 +33,7 @@
     "require": {
         "php": ">=5.3.0",
         "alfresco-soap/alfresco-soap": "dev-master",
-        "dkd/php-cmis-client": "~v0.1"
+        "dkd/php-cmis": "^0.1.0"
     },
     "require-dev": {
         "pdepend/pdepend": "~1.0",
