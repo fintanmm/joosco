@@ -36,6 +36,8 @@
         "dkd/php-cmis": "^0.1.0"
     },
     "require-dev": {
+        "fabpot/php-cs-fixer": "2.0.*@dev",
+        "joomla/cms": "3.4.1",        
         "pdepend/pdepend": "~1.0",
         "phploc/phploc": "~2.0",
         "phpmd/phpmd": "~1.0",
