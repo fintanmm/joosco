@@ -26,24 +26,24 @@ class JooscoTest extends TestCase
         $this->assertInstanceOf('JPlugin', $plugin);
     }
 
-    // public function testOnAuthenticate()
-    // {
-    //     $credentials = ['username' => 'johndoe', 'password' => 'w8glhwh7ts', 'mail' => 'johndoe@acme.com'];
-    //     $response = (object) ['username' => 'johndoe', 'password' => 'w8glhwh7ts',
-    //                           'mail' => 'johndoe@acme.com',
-    //                           'status' => STATUS_SUCCESS, ];
+    public function testOnAuthenticate()
+    {
+        $this->markTestIncomplete();
 
-    //     $plugin = $this->plugin->onAuthenticate($credentials, [], $response);
+        $credentials = ['username' => 'admin', 'password' => 'admin', 'mail' => 'admin@acme.com'];
+        $response = (object) ['username' => 'admin', 'password' => 'admin',
+                              'mail' => 'admin@acme.com',
+                              'status' => STATUS_SUCCESS, ];
 
-    //     $this->assertTrue($plugin);
-    // }
+        $plugin = $this->plugin->onAuthenticate($credentials, [], $response);
+
+        $this->assertTrue($plugin);
+    }
 
     public function setUp()
     {
         parent::setUp();
-
         $mockObject = new MockClass();
-        // define('JAUTHENTICATE_STATUS_SUCCESS', 'success');
         $this->plugin = new Joosco($mockObject);
     }
 }

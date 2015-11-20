@@ -52,12 +52,12 @@ class Joosco extends JPlugin
     public function onAuthenticate($credentials, $options, &$response)
     {
         // Get the URL of the Alfresco repository as a parameter of the plugin
-        $plugin = &JPluginHelper::getPlugin('authentication', 'joosco');
+        $plugin = JPluginHelper::getPlugin('authentication', 'joosco');
         // $pluginParams = new JForm($plugin->params);
 
         // // Set the variables
         // $repositoryUrl = $pluginParams->get('alf-url');
-        $repositoryUrl = 'http://localhost:8080/alfresco';
+        $repositoryUrl = 'http://localhost:8888/alfresco/api';
         $userName = $credentials['username'];
         $password = $credentials['password'];
 
