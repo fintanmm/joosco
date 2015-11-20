@@ -448,3 +448,5 @@
 
 composer.phar
 vendor/
+# added by GitSavvy
+tests/session/
