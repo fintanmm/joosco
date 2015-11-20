@@ -12,7 +12,10 @@ namespace Joosco\Plugin;
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-jimport('joomla.event.plugin');
+use JPlugin;
+use AlfrescoSoap\Repository;
+use JPluginHelper;
+use JForm;
 
 /**
  * Joosco Authentication Plugin.
@@ -26,15 +29,11 @@ class Joosco extends JPlugin
     /**
      * Constructor.
      *
-     * For php4 compatability we must not use the __constructor as a constructor for plugins
-     * because func_get_args ( void ) returns a copy of all passed arguments NOT references.
-     * This causes problems with cross-referencing necessary for the observer design pattern.
-     *
      * @param object $subject The object to observe
      *
      * @since 1.5
      */
-    public function plgAuthenticationJoosco(&$subject)
+    public function __construct(&$subject)
     {
         parent::__construct($subject);
     }
@@ -52,15 +51,13 @@ class Joosco extends JPlugin
      */
     public function onAuthenticate($credentials, $options, &$response)
     {
-        // This file is needed to use the Repository class
-        require_once dirname(__FILE__).'/alfresco-php-library/Repository.php';
-
         // Get the URL of the Alfresco repository as a parameter of the plugin
         $plugin = &JPluginHelper::getPlugin('authentication', 'joosco');
-        $pluginParams = new JParameter($plugin->params);
+        // $pluginParams = new JForm($plugin->params);
 
-        // Set the variables
-        $repositoryUrl = $pluginParams->get('alf-url');
+        // // Set the variables
+        // $repositoryUrl = $pluginParams->get('alf-url');
+        $repositoryUrl = 'http://localhost:8080/alfresco';
         $userName = $credentials['username'];
         $password = $credentials['password'];
 

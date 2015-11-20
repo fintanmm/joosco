@@ -9,16 +9,52 @@
 namespace JooscoUnitTests\Plugin;
 
 use Joosco\UnitTests\Helpers\TestCase;
+use Joosco\Plugin\Joosco;
+use JPlugin;
 
 /**
- * Unit Test class for JooscoViewDefault.
+ * Unit Test class for Joosco\Plugin\Joosco.
  */
 class JooscoTest extends TestCase
 {
-    public function testConstruct()
+    public function testConstructor()
     {
-        $app = $this->joomlaReflection->getValue($this->view, 'app');
+        $mockObject = new MockClass();
+        // define('JAUTHENTICATE_STATUS_SUCCESS', 'success');
+        $plugin = new Joosco($mockObject);
 
-        $this->assertEquals($this->app, $app);
+        $this->assertInstanceOf('JPlugin', $plugin);
+    }
+
+    // public function testOnAuthenticate()
+    // {
+    //     $credentials = ['username' => 'johndoe', 'password' => 'w8glhwh7ts', 'mail' => 'johndoe@acme.com'];
+    //     $response = (object) ['username' => 'johndoe', 'password' => 'w8glhwh7ts',
+    //                           'mail' => 'johndoe@acme.com',
+    //                           'status' => STATUS_SUCCESS, ];
+
+    //     $plugin = $this->plugin->onAuthenticate($credentials, [], $response);
+
+    //     $this->assertTrue($plugin);
+    // }
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $mockObject = new MockClass();
+        // define('JAUTHENTICATE_STATUS_SUCCESS', 'success');
+        $this->plugin = new Joosco($mockObject);
+    }
+}
+
+/**
+ *
+ */
+class MockClass extends \stdClass
+{
+    public function attach()
+    {
+        # code...
     }
 }
