@@ -11,3 +11,4 @@ defined('JPATH_PLUGIN') or define('JPATH_PLUGIN', dirname(__DIR__).'/../src/Plug
 define('JOOSCO_STUBS', dirname(__DIR__).'/unit/stubs/');
 const STATUS_SUCCESS = 1;
 const STATUS_FAILURE = 0;
+ini_set('session.save_path', dirname(__DIR__).'/tests/session');
