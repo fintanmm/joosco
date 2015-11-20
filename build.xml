@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Joosco" default="build">
-
+  <property name="basedir" value="."/>
   <property name="builddir" value="${basedir}/build"/>
   <property name="composer" value="${builddir}/composer.phar"/>
 
