@@ -28,7 +28,7 @@ use Dkd\PhpCmis\Enum;
  *
  * @since 1.5
  */
-class Joosco extends JPlugin
+class PlgAuthenticationJoosco extends JPlugin
 {
     private $sessionFactory;
 

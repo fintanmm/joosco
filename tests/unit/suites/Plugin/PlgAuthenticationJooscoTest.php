@@ -18,7 +18,7 @@ use Joomla\Registry\Registry;
 /**
  * Unit Test class for Joosco\Plugin\Joosco.
  */
-class JooscoTest extends TestCase
+class PlgAuthenticationJoosco extends TestCase
 {
     public function testConstructor()
     {
