@@ -56,7 +56,8 @@
     "autoload-dev": {
         "files": [
             "vendor/joomla/cms/tests/unit/bootstrap.php",
-            "vendor/joomla/cms/tests/unit/suites/libraries/joomla/view/mocks/JModelMock.php"
+            "vendor/joomla/cms/tests/unit/suites/libraries/joomla/view/mocks/JModelMock.php",
+            "vendor/joomla/cms/libraries/joomla/user/authentication.php"
         ],        
         "psr-4": {
             "Joosco\\UnitTests\\": "tests/unit/"
