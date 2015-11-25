@@ -9,23 +9,23 @@
 namespace JooscoUnitTests\Plugin;
 
 use Joosco\UnitTests\Helpers\TestCase;
-use Joosco\Plugin\Joosco;
+use Joosco\Plugin\PlgAuthenticationJoosco;
 use SplObjectStorage;
 use GuzzleHttp;
 use Dkd\PhpCmis\SessionParameter;
 use Joomla\Registry\Registry;
 
 /**
- * Unit Test class for Joosco\Plugin\Joosco.
+ * Unit Test class for Joosco\Plugin\PlgAuthenticationJoosco.
  */
-class PlgAuthenticationJoosco extends TestCase
+class PlgAuthenticationJooscoTest extends TestCase
 {
     public function testConstructor()
     {
         $this->markTestSkipped();
 
         $mockObject = new SplObjectStorage();
-        $plugin = new Joosco($mockObject);
+        $plugin = new PlgAuthenticationJoosco($mockObject);
 
         $this->assertInstanceOf('JPlugin', $plugin);
 
@@ -101,6 +101,6 @@ class PlgAuthenticationJoosco extends TestCase
         parent::setUp();
         $mockObject = new SplObjectStorage();
         $this->params = ['params' => "{'username': 'admin', 'password': 'admin', 'mail': 'admin@acme.com'}"];
-        $this->plugin = new Joosco($mockObject, $this->params);
+        $this->plugin = new PlgAuthenticationJoosco($mockObject, $this->params);
     }
 }
