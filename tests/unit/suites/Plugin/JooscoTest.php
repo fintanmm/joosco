@@ -10,7 +10,10 @@ namespace JooscoUnitTests\Plugin;
 
 use Joosco\UnitTests\Helpers\TestCase;
 use Joosco\Plugin\Joosco;
-use JPlugin;
+use SplObjectStorage;
+use GuzzleHttp;
+use Dkd\PhpCmis\SessionParameter;
+use Joomla\Registry\Registry;
 
 /**
  * Unit Test class for Joosco\Plugin\Joosco.
@@ -19,49 +22,85 @@ class JooscoTest extends TestCase
 {
     public function testConstructor()
     {
-        $mockObject = new MockClass();
-        // define('JAUTHENTICATE_STATUS_SUCCESS', 'success');
+        $this->markTestSkipped();
+
+        $mockObject = new SplObjectStorage();
         $plugin = new Joosco($mockObject);
 
         $this->assertInstanceOf('JPlugin', $plugin);
+
+        $sessionFactory = $this->joomlaReflection->getValue($plugin, 'sessionFactory');
+        $this->assertInstanceOf('\Dkd\PhpCmis\SessionFactory', $sessionFactory);
     }
 
-    public function testOnAuthenticate()
+    public function testOnUserAuthenticateReturnFalse()
     {
         $this->markTestIncomplete();
 
         $credentials = ['username' => 'admin', 'password' => 'admin', 'mail' => 'admin@acme.com'];
-        $response = (object) ['username' => 'admin', 'password' => 'admin',
-                              'mail' => 'admin@acme.com',
-                              'status' => STATUS_SUCCESS, ];
+        $response = (object) ['status' => ''];
 
-        $plugin = $this->plugin->onAuthenticate($credentials, [], $response);
-
-        $this->assertTrue($plugin);
+        $authentication = $this->plugin->onUserAuthenticate($credentials, [], $response);
+        $this->assertFalse($authentication);
     }
 
-    public function testBindToRepository()
+    public function testOnUserAuthenticateReturnTrue()
     {
-        $bind = $this->plugin->bindToRepository();
+        $credentials = ['username' => 'admin', 'password' => 'admin', 'mail' => 'admin@acme.com'];
+        $response = (object) ['status' => ''];
 
-        $this->assertTrue($bind);
+        $authentication = $this->plugin->onUserAuthenticate($credentials, [], $response);
+        $this->assertTrue($authentication);
+    }
+
+    public function testCreateSession()
+    {
+        $session = $this->plugin->createSession();
+
+        $this->assertInstanceOf('\Dkd\PhpCmis\Session', $session);
+    }
+
+    public function testCreateSessionThowsIllegalStateException()
+    {
+        $this->markTestIncomplete();
+
+        $this->setExpectedException('\Dkd\PhpCmis\Exception\IllegalStateException', 'Repository ID is not set!');
+        $this->plugin->params->set('SessionParameter', []);
+        $this->plugin->createSession();
+    }
+
+    public function testGetSessionParamaters()
+    {
+        $clientDetails = ['defaults' => ['auth' => ['admin','admin']]];
+
+        $httpInvoker = new GuzzleHttp\Client($clientDetails);
+
+        $params = new Registry();
+        $params->set('SessionParameter', [
+            'dkd.phpcmis.binding.type' => 'browser',
+            'dkd.phpcmis.binding.browser.url' => 'http://localhost:8888/alfresco/api/-default-/public/cmis/versions/1.1/browser',
+            'dkd.phpcmis.binding.browser.succinct' => false,
+            'dkd.phpcmis.binding.httpinvoker.object' => $httpInvoker,
+        ]);
+
+        $parameters = $this->plugin->getSessionParameters();
+
+        $this->assertEquals($params->get('SessionParameter'), $parameters);
+    }
+
+    public function testDefaultGetRepository()
+    {
+        $this->plugin->getRepository();
+        $expectedRepoId = '-default-';
+        $repoId = $this->plugin->params->get('SessionParameter')['dkd.phpcmis.session.repository.id'];
+        $this->assertEquals($expectedRepoId, $repoId);
     }
 
     public function setUp()
     {
         parent::setUp();
-        $mockObject = new MockClass();
-        $this->plugin = new Joosco($mockObject);
-    }
-}
-
-/**
- *
- */
-class MockClass extends \stdClass
-{
-    public function attach()
-    {
-        # code...
+        $mockObject = new SplObjectStorage();
+        $this->params = ['params' => "{'username': 'admin', 'password': 'admin', 'mail': 'admin@acme.com'}"];
+        $this->plugin = new Joosco($mockObject, $this->params);
     }
 }

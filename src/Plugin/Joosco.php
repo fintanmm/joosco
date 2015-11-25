@@ -15,7 +15,11 @@ defined('_JEXEC') or die();
 use JPlugin;
 use AlfrescoSoap\Repository;
 use JPluginHelper;
-use JForm;
+use JAuthentication;
+use GuzzleHttp;
+use Dkd\PhpCmis\SessionFactory;
+use Dkd\PhpCmis\SessionParameter;
+use Dkd\PhpCmis\Enum;
 
 /**
  * Joosco Authentication Plugin.
@@ -26,16 +30,12 @@ use JForm;
  */
 class Joosco extends JPlugin
 {
-    /**
-     * Constructor.
-     *
-     * @param object $subject The object to observe
-     *
-     * @since 1.5
-     */
-    public function __construct(&$subject)
+    private $sessionFactory;
+
+    public function __construct(&$subject, $config = array())
     {
-        parent::__construct($subject);
+        parent::__construct($subject, $config);
+        $this->sessionFactory = new SessionFactory();
     }
 
     /**
@@ -49,44 +49,73 @@ class Joosco extends JPlugin
      *
      * @since 1.5
      */
-    public function onAuthenticate($credentials, $options, &$response)
+    public function onUserAuthenticate($credentials, $options, &$response)
     {
         // Get the URL of the Alfresco repository as a parameter of the plugin
-        $plugin = JPluginHelper::getPlugin('authentication', 'joosco');
-        // $pluginParams = new JForm($plugin->params);
-
+        // $plugin = JPluginHelper::getPlugin('authentication', 'joosco');
         // // Set the variables
         // $repositoryUrl = $pluginParams->get('alf-url');
-        $repositoryUrl = 'http://localhost:8888/alfresco/api';
-        $userName = $credentials['username'];
-        $password = $credentials['password'];
-
-        // Connect to the repository
-        $repository = new Repository($repositoryUrl);
-        $ticket = null;
 
         try {
-            // Try to create a ticket
-            $ticket = $repository->authenticate($userName, $password);
+            self::createSession();
 
-            // If the ticket fails, it means that the username and/or password are wrong
-            $_SESSION['ticket'] = $ticket;
-            $response->status = JAUTHENTICATE_STATUS_SUCCESS;
+            $response->status = JAuthentication::STATUS_SUCCESS;
 
-            // There's no way to get the Alfresco name or email address of the user
-            // The only thing to do is wait for an update of the Alfresco PHP API
-            $response->username = $credentials['username'];
-            $response->email = $credentials['username'].'@alfresco.user';
-            $response->fullname = $credentials['username'];
-        } catch (Exception $e) {
-            // Wrong username or password creates an exception
-            $response->status = JAUTHENTICATE_STATUS_FAILURE;
-            $response->error_message = 'Authentication failed';
+            return true;
+        } catch (\Dkd\PhpCmis\Exception\IllegalStateException $e) {
+            // If no repository id is found, it creates an exception
+            $response->status = JAuthentication::STATUS_FAILURE;
+            $response->error_message = JText::_('JGLOBAL_AUTH_FAIL');
         }
+
+        return false;
     }
 
-    public function bindToRepository()
+    public function createSession()
     {
-        return true;
+        self::getRepository();
+        $sessionParameters = $this->params->get('SessionParameter');
+        $session = $this->sessionFactory->createSession($sessionParameters);
+
+        return $session;
+    }
+
+    public function getRepository($byRepoId = null)
+    {
+        $sessionParameters = self::getSessionParameters();
+        $repositories = $this->sessionFactory->getRepositories($sessionParameters);
+        // If no repository id is defined use the first repository
+        if ($byRepoId === null) {
+            $byRepoId = $repositories[0]->getId();
+        }
+
+        self::setSessionParameters($byRepoId);
+    }
+
+    public function getSessionParameters()
+    {
+        self::setSessionParameters();
+
+        return $this->params->get('SessionParameter');
+    }
+
+    public function setSessionParameters($repoId = null)
+    {
+        $clientDetails = ['defaults' => ['auth' => [
+                            'admin',
+                            'admin', ],
+                        ],
+                    ];
+        $httpInvoker = new GuzzleHttp\Client($clientDetails);
+        $sessionParameters = [
+            SessionParameter::BINDING_TYPE => Enum\BindingType::BROWSER,
+            SessionParameter::BROWSER_URL => 'http://localhost:8888/alfresco/api/-default-/public/cmis/versions/1.1/browser',
+            SessionParameter::BROWSER_SUCCINCT => false,
+            SessionParameter::HTTP_INVOKER_OBJECT => $httpInvoker,
+        ];
+        if ($repoId !== null) {
+            $sessionParameters[SessionParameter::REPOSITORY_ID] = $repoId;
+        }
+        $this->params->set('SessionParameter', $sessionParameters);
     }
 }
