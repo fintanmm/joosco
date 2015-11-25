@@ -8,14 +8,17 @@
 	<authorEmail>dhjiz@d-bog.com</authorEmail>
 	<authorUrl>www.d-bog.com</authorUrl>
 	<version>0.1</version>
-	<description>Handles user authentication to an Alfresco Repository</description>
+	<description>PLG_JOOSCO_DESCRIPTION</description>
 	<files>
-		<filename plugin="joosco">Joosco.php</filename>
-		<folder>Views</folder>
+		<filename plugin="joosco">PlgAuthenticationJoosco.php</filename>
+		<folder>language</folder>
 		<folder>vendor</folder>
-		<folder>assets</folder>	
 	</files>
-	<params>
-		<param name="alf-url" type="text" size="32" default="http://example.com:8080/alfresco/api" label="Alfresco API URL" description="This is the URL of the API on an Alfresco Repository. You can take the default value and replace the 'example.com' part with the address of your Alfresco server. If Alfresco is on the same server, don't write 'localhost'." />
-	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cmis_url" type="text" size="100" default="http://example.com:8080/alfresco/api/-default-/public/cmis/versions/1.1/browser" label="PLG_JOOSCO_FIELD_LABEL" description="PLG_JOOSCO_FIELD_DESCRIPTION" />
+			</fieldset>
+		</fields>	
+	</config>
 </install>
