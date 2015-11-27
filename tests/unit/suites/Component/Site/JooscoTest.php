@@ -17,6 +17,8 @@ class JooscoTest extends TestCase
 {
     public function testConstruct()
     {
+        $this->markTestIncomplete();
+
         $app = $this->joomlaReflection->getValue($this->view, 'app');
 
         $this->assertEquals($this->app, $app);

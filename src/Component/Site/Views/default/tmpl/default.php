@@ -163,28 +163,28 @@ class JooscoTmpl
 
 <?php
 // Get the values and set the class variables
-JooscoTmpl::$path = $this->path;
-JooscoTmpl::$session = $this->session;
-JooscoTmpl::$store = $this->store;
-JooscoTmpl::$currentNode = $this->currentNode;
+// JooscoTmpl::$path = $this->path;
+// JooscoTmpl::$session = $this->session;
+// JooscoTmpl::$store = $this->store;
+// JooscoTmpl::$currentNode = $this->currentNode;
 
-JooscoTmpl::$option = $this->option;
-JooscoTmpl::$view = $this->view;
-JooscoTmpl::$itemid = $this->itemid;
+// JooscoTmpl::$option = $this->option;
+// JooscoTmpl::$view = $this->view;
+// JooscoTmpl::$itemid = $this->itemid;
 ?>
 
 <?php
        // Output the breadcrumb
        // This is a path breadcrumb (http://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29#Path)
-       JooscoTmpl::outputBreadcrumb(JooscoTmpl::$path);
+       // JooscoTmpl::outputBreadcrumb(JooscoTmpl::$path);
 ?>
 <br />
 <?php
        // Output the spaces (folders)
-       JooscoTmpl::outputTable('Browse Spaces', JooscoTmpl::$currentNode, '{http://www.alfresco.org/model/content/1.0}folder', 'There are no spaces');
+       // JooscoTmpl::outputTable('Browse Spaces', JooscoTmpl::$currentNode, '{http://www.alfresco.org/model/content/1.0}folder', 'There are no spaces');
 ?>
 <br />
 <?php
        // Output the content (files)
-       JooscoTmpl::outputTable('Content Items', JooscoTmpl::$currentNode, '{http://www.alfresco.org/model/content/1.0}content', 'There is no content');
+       // JooscoTmpl::outputTable('Content Items', JooscoTmpl::$currentNode, '{http://www.alfresco.org/model/content/1.0}content', 'There is no content');
 ?>
