@@ -58,7 +58,7 @@ class JooscoTmpl
 
     public function outputRow($node)
     {
-        print("<tr><td><img src='components/com_joosco/alfresco-php-library/Common/Images/".self::getImageURL($node->type)."'>&nbsp;&nbsp;<a href='");
+        print("<tr><td><img src='components/com_joosco/Site/assets/Images/".self::getImageURL($node->type)."'>&nbsp;&nbsp;<a href='");
         print(self::getURL($node));
         print("'>");
         print($node->cm_name);
@@ -70,20 +70,20 @@ class JooscoTmpl
         print(
         '<table cellspacing=0 cellpadding=0 border=0 width=95% align=center>'.
         '   <tr>'.
-        '       <td width="7"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_01.gif" width="7" height="7" alt=""></td><td background="components/com_joosco/alfresco-php-library/Common/Images/blue_02.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_02.gif" width="7" height="7" alt=""></td>'.
-        '       <td width="7"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_03.gif" width="7" height="7" alt=""></td></tr><tr><td background="components/com_joosco/alfresco-php-library/Common/Images/blue_04.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_04.gif" width="7" height="7" alt=""></td>'.
+        '       <td width="7"><img src="components/com_joosco/Site/assets/Images/blue_01.gif" width="7" height="7" alt=""></td><td background="components/com_joosco/Site/assets/Images/blue_02.gif"><img src="components/com_joosco/Site/assets/Images/blue_02.gif" width="7" height="7" alt=""></td>'.
+        '       <td width="7"><img src="components/com_joosco/Site/assets/Images/blue_03.gif" width="7" height="7" alt=""></td></tr><tr><td background="components/com_joosco/Site/assets/Images/blue_04.gif"><img src="components/com_joosco/Site/assets/Images/blue_04.gif" width="7" height="7" alt=""></td>'.
         '       <td bgcolor="#D3E6FE">'.
         '           <table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td><span class="mainSubTitle">'.$title.'</span></td></tr></table>'.
         '       </td>'.
-        '       <td background="components/com_joosco/alfresco-php-library/Common/Images/blue_06.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_06.gif" width="7" height="7" alt=""></td>'.
+        '       <td background="components/com_joosco/Site/assets/Images/blue_06.gif"><img src="components/com_joosco/Site/assets/Images/blue_06.gif" width="7" height="7" alt=""></td>'.
         '   </tr>'.
         '   <tr>'.
-        '       <td width="7"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_white_07.gif" width="7" height="7" alt=""></td>'.
-        '       <td background="components/com_joosco/alfresco-php-library/Common/Images/blue_08.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_08.gif" width="7" height="7" alt=""></td>'.
-        '       <td width="7"><img src="components/com_joosco/alfresco-php-library/Common/Images/blue_white_09.gif" width="7" height="7" alt=""></td>'.
+        '       <td width="7"><img src="components/com_joosco/Site/assets/Images/blue_white_07.gif" width="7" height="7" alt=""></td>'.
+        '       <td background="components/com_joosco/Site/assets/Images/blue_08.gif"><img src="components/com_joosco/Site/assets/Images/blue_08.gif" width="7" height="7" alt=""></td>'.
+        '       <td width="7"><img src="components/com_joosco/Site/assets/Images/blue_white_09.gif" width="7" height="7" alt=""></td>'.
         '   </tr>'.
         '   <tr>'.
-        '       <td background="components/com_joosco/alfresco-php-library/Common/Images/white_04.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/white_04.gif" width="7" height="7" alt=""></td>'.
+        '       <td background="components/com_joosco/Site/assets/Images/white_04.gif"><img src="components/com_joosco/Site/assets/Images/white_04.gif" width="7" height="7" alt=""></td>'.
         '       <td bgcolor="white" style="padding-top:6px;">'.
         '           <table border="0" width="100%">');
 
@@ -96,12 +96,12 @@ class JooscoTmpl
         print(
         '         </table>'.
         '      </td>'.
-        '      <td background="components/com_joosco/alfresco-php-library/Common/Images/white_06.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/white_06.gif" width="7" height="7" alt=""></td>'.
+        '      <td background="components/com_joosco/Site/assets/Images/white_06.gif"><img src="components/com_joosco/Site/assets/Images/white_06.gif" width="7" height="7" alt=""></td>'.
         '   </tr>'.
         '   <tr>'.
-        '      <td width=7><img src="components/com_joosco/alfresco-php-library/Common/Images/white_07.gif" width="7" height="7" alt=""></td>'.
-        '      <td background="components/com_joosco/alfresco-php-library/Common/Images/white_08.gif"><img src="components/com_joosco/alfresco-php-library/Common/Images/white_08.gif" width="7" height="7" alt=""></td>'.
-        '      <td width=7><img src="components/com_joosco/alfresco-php-library/Common/Images/white_09.gif" width="7" height="7" alt=""></td>'.
+        '      <td width=7><img src="components/com_joosco/Site/assets/Images/white_07.gif" width="7" height="7" alt=""></td>'.
+        '      <td background="components/com_joosco/Site/assets/Images/white_08.gif"><img src="components/com_joosco/Site/assets/Images/white_08.gif" width="7" height="7" alt=""></td>'.
+        '      <td width=7><img src="components/com_joosco/Site/assets/Images/white_09.gif" width="7" height="7" alt=""></td>'.
         '   </tr>'.
         '</table>');
     }
@@ -148,12 +148,12 @@ class JooscoTmpl
         <td width=100%>
         <table cellspacing="0" cellpadding="0" width="100%">
         <tr>
-            <td style="padding-right:4px; vertical-align: middle;"><img src="components/com_joosco/alfresco-php-library/Common/Images/AlfrescoLogo32.png" alt="Alfresco" title="Alfresco" style="border: 0;"></td>
-            <td><img src="components/com_joosco/alfresco-php-library/Common/Images/titlebar_begin.gif" width="10" height="30"></td>
-            <td width="100%" style="background-image: url(components/com_joosco/alfresco-php-library/Common/Images/titlebar_bg.gif)">
+            <td style="padding-right:4px; vertical-align: middle;"><img src="components/com_joosco/Site/assets/Images/AlfrescoLogo32.png" alt="Alfresco" title="Alfresco" style="border: 0;"></td>
+            <td><img src="components/com_joosco/Site/assets/Images/titlebar_begin.gif" width="10" height="30"></td>
+            <td width="100%" style="background-image: url(components/com_joosco/Site/assets/Images/titlebar_bg.gif)">
                 <strong style="color: white;">Joosco Extension</strong>
             </td>
-            <td><img src="components/com_joosco/alfresco-php-library/Common/Images/titlebar_end.gif" width="8" height="30"></td>
+            <td><img src="components/com_joosco/Site/assets/Images/titlebar_end.gif" width="8" height="30"></td>
         </tr>
         </table>
         </td>
