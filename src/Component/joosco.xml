@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
-<install type="component" version="1.5.0">
+<extension type="component" version="3.4.0" method="upgrade">
 	<name>Joosco</name>
 	<creationDate>August 2007</creationDate>
 	<author>Dhjiz Trevian</author>
@@ -9,9 +8,9 @@
 	<copyright>(C) 2007 SARL D-Bog</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<version>0.1</version>
-	<description>The Joosco component provides Alfresco documents into Joomla!</description>
+	<description>COM_JOOSCO_DESCRIPTION</description>
 
-	<files folder="site">
+	<files folder="Site">
 		<filename>index.html</filename>
 		<filename>Joosco.php</filename>
 		<filename>Controller.php</filename>
@@ -19,12 +18,7 @@
 		<folder>vendor</folder>
 		<folder>assets</folder>		
 	</files>
-
-	<!-- The entire Alfresco PHP Library is included with the component -->
-	<files>
-		<folder>vendor</folder>
-		<folder>assets</folder>
-	</files>
-	
-	<administration/>
-</install>
+    <languages folder="Site">
+        <language tag="en-GB">languages/en-GB/en-GB.com_joosco.ini</language>
+    </languages>
+</extension>
