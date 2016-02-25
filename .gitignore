@@ -1,3 +1,7 @@
 /build
 /composer.lock
 /vendor
+
+# added by GitSavvy
+*.sublime*
+/tests/session*
