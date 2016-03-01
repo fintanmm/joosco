@@ -6,7 +6,7 @@ You need to have a working installation of Joomla!, version 3.4 to use the exten
 Joosco aims to give access to users' documents in a corporate portal, using the Joomla! Framework and
 Content Management Interoperability Services (CMIS).
 
-In a nutshell, Joosco is a front-end for CMIS enabled content management systems, in Joomla!.
+In a nutshell, Joosco is a front-end for a CMIS enabled Enterprise Content Management(ECM) systems, in Joomla!.
 
 It works by creating a new entry in a menu in Joomla, called Documents, for example. The users can click
 on this link to go to a new page where they can browse through spaces and content of the CMIS Repository.
