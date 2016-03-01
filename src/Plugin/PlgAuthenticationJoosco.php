@@ -109,7 +109,7 @@ class PlgAuthenticationJoosco extends JPlugin
         $httpInvoker = new GuzzleHttp\Client($clientDetails);
         $sessionParameters = [
             SessionParameter::BINDING_TYPE => Enum\BindingType::BROWSER,
-            SessionParameter::BROWSER_URL => 'http://localhost:8888/alfresco/api/-default-/public/cmis/versions/1.1/browser',
+            SessionParameter::BROWSER_URL => 'http://my-cmis-inmemory:8080/chemistry-opencmis-server-inmemory-1.0.0-SNAPSHOT/atom11',
             SessionParameter::BROWSER_SUCCINCT => false,
             SessionParameter::HTTP_INVOKER_OBJECT => $httpInvoker,
         ];

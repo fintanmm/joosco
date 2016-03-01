@@ -78,7 +78,7 @@ class PlgAuthenticationJooscoTest extends TestCase
         $params = new Registry();
         $params->set('SessionParameter', [
             'dkd.phpcmis.binding.type' => 'browser',
-            'dkd.phpcmis.binding.browser.url' => 'http://localhost:8888/alfresco/api/-default-/public/cmis/versions/1.1/browser',
+            'dkd.phpcmis.binding.browser.url' => 'http://my-cmis-inmemory:8080/chemistry-opencmis-server-inmemory-1.0.0-SNAPSHOT/atom11',
             'dkd.phpcmis.binding.browser.succinct' => false,
             'dkd.phpcmis.binding.httpinvoker.object' => $httpInvoker,
         ]);
