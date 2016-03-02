@@ -14,7 +14,7 @@ use JFactory;
 /**
  * Default view class.
  */
-class Display extends JViewHtml
+class Documents extends JViewHtml
 {
     protected $app;
 
@@ -29,5 +29,20 @@ class Display extends JViewHtml
     {
         $render = parent::render();
         echo $render;
+    }
+    
+    public function getUrl($node)
+    {
+        return $node;
+    }
+    
+    public function getImageURL($current_type = '{http://www.alfresco.org/model/content/1.0}folder')
+    {
+        $result = 'space_small.gif';
+        if ($current_type == '{http://www.alfresco.org/model/content/1.0}content') {
+            $result = 'post.gif';
+        } 
+
+        return $result;
     }
 }
