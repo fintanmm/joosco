@@ -1,7 +1,7 @@
 {
     "name": "fintanmm/joosco",
     "type": "library",
-    "description": "JOOSCO is a front end for Alfresco using the Joomla framework",
+    "description": "JOOSCO is a front end for CMIS using the Joomla framework",
     "homepage": "https://github.com/fintanmm/joosco",
     "license": "GPLv2",
     "authors": [
@@ -32,10 +32,10 @@
     ],    
     "require": {
         "php": ">=5.3.0",
-        "alfresco-soap/alfresco-soap": "dev-master",
         "dkd/php-cmis": "^0.1.0"
     },
     "require-dev": {
+        "phing/phing": "^2.13",
         "fabpot/php-cs-fixer": "2.0.*@dev",
         "joomla/cms": "3.4.1",        
         "pdepend/pdepend": "~1.0",
